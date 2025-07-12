@@ -66,9 +66,11 @@ class Main implements WELCOME_MESSAGE {
 
         try (FileWriter f = new FileWriter("Colors.md", false)) {
 
-            f.write(dec1);
-            f.write(dec1);
-            f.write(dec1);
+            for (int i = 0; i < 3; i++)  {
+
+                f.write(dec1);
+
+            }
 
 
         } catch (Exception ce) {
@@ -82,7 +84,11 @@ class Main implements WELCOME_MESSAGE {
 
         try (FileWriter f = new FileWriter("Colors.md", false)) {
 
-            f.write(String.valueOf(Integer.parseInt(args, 16)));
+            for (int i = 0; i < 3; i++) {
+
+                f.write(String.valueOf(Integer.parseInt(args, 16)));
+
+            }
 
 
         } catch (Exception ce) {
