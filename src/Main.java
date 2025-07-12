@@ -1,4 +1,5 @@
 import java.io.FileWriter;
+import java.util.Random;
 
 class Main {
 
@@ -23,8 +24,26 @@ class Main {
                 getArgsFile(args[1]);
 
             }
-            
+
+            if (args[0].equalsIgnoreCase("--Random")) {
+
+                getRGB();
+            }
+
         }
+
+    }
+
+    public static void getRGB(){
+
+        Random Values = new Random();
+
+        int red = Values.nextInt(1, 255);
+        int green = Values.nextInt(1, 255);
+        int blue = Values.nextInt(1, 255);
+        draw_hex(red);
+        draw_hex(green);
+        draw_hex(blue);
 
     }
 
