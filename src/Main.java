@@ -1,13 +1,23 @@
 import java.io.FileWriter;
+import java.util.Date;
 import java.util.Random;
 
-class Main {
+interface WELCOME_MESSAGE {
+    static void createMessage(String message) {
+        System.out.println(message);
+    }
+}
+
+
+class Main implements WELCOME_MESSAGE {
 
     public static void main(String[] args)  {
 
         if (args.length > 0) {
 
             if (args[0].equalsIgnoreCase("--Dec")) {
+
+                WELCOME_MESSAGE.createMessage(date());
 
 
                 draw_hex(Integer.parseInt(args[1]));
@@ -19,6 +29,8 @@ class Main {
 
             if (args[0].equalsIgnoreCase("--Hex")) {
 
+                WELCOME_MESSAGE.createMessage(date());
+
                 getArgsFile(args[1]);
                 getArgsFile(args[1]);
                 getArgsFile(args[1]);
@@ -27,6 +39,7 @@ class Main {
 
             if (args[0].equalsIgnoreCase("--Random")) {
 
+                WELCOME_MESSAGE.createMessage(date());
                 getRGB();
             }
 
@@ -76,6 +89,14 @@ class Main {
             System.out.println(ce.getMessage());
         }
 
+
+    }
+
+
+    public static String date() {
+
+        Date e = new Date();
+        return e.toString();
 
     }
 
